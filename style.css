@@ -1,0 +1,22 @@
+.layered-image {
+    position: relative;
+  }
+  
+  .layered-image img {
+    width: 700px;
+  }
+  
+  .alpha-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0.2;
+  }
+  
+  .solid-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 1;
+  }
+  
