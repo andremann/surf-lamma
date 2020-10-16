@@ -28,5 +28,8 @@ var app = new Vue({
                 this.area = 'M';
             }
         }
+    },
+    mounted() {
+        // magnify("zoom", 3);
     }
 })
