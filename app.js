@@ -30,6 +30,6 @@ var app = new Vue({
         }
     },
     mounted() {
-        // magnify("zoom", 3);
+        
     }
 })

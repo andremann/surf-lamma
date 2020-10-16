@@ -22,9 +22,11 @@
             </nav>
         </div>
         <div class="row">
-            <div class="layered-image img-magnifier-container">
-                <img id="zoom" v-bind:src="base + model + wave + area + '.' + current + '.png'" />
-                <img v-on:click="swap()" v-bind:class="{'alpha-overlay': flag, 'solid-overlay': !flag}" v-bind:src="base + model + wind + area + '.' + current + '.png'" />
+            <div class="col-6">
+                <img id='zoom' v-bind:src="base + model + wave + area + '.' + current + '.png'" />
+            </div>
+            <div class="col-6">
+                <img v-bind:src="base + model + wind + area + '.' + current + '.png'" />
             </div>
         </div>
     </div>
