@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <div class="" id="lamma-surf">
-        <div class="">
+    <div class="container" id="lamma-surf">
+        <div class="row">
             <button type="button" class="btn btn-primary" v-on:click="swap_model()">LR/HR</button>
         </div>
-        <div class="">
+        <div class="row">
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                     <li class="page-item"><a class="page-link" href="#" v-on:click="prev()">Previous</a></li>
@@ -21,7 +21,7 @@
                 </ul>
             </nav>
         </div>
-        <div class="">
+        <div class="row">
             <div class="layered-image img-magnifier-container">
                 <img id="zoom" v-bind:src="base + model + wave + area + '.' + current + '.png'" />
                 <img v-on:click="swap()" v-bind:class="{'alpha-overlay': flag, 'solid-overlay': !flag}" v-bind:src="base + model + wind + area + '.' + current + '.png'" />
