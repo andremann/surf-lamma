@@ -5,7 +5,6 @@ var app = new Vue({
         wave: "/last/swh.",
         wind: "/last/wind10.",
         current: 1,
-        flag: true,
         model: 'lr',
         area: 'M'
     },
@@ -15,9 +14,6 @@ var app = new Vue({
         },
         next: function () {
             this.current = this.current + 1;
-        },
-        swap: function () {
-            this.flag = !this.flag;
         },
         swap_model: function () {
             if (this.model == 'lr') {
