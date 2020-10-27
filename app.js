@@ -9,11 +9,8 @@ var app = new Vue({
         area: 'M'
     },
     methods: {
-        prev: function () {
-            this.current = this.current - 1;
-        },
-        next: function () {
-            this.current = this.current + 1;
+        step: function (n) {
+            this.current = this.current + n;
         },
         swap_model: function () {
             if (this.model == 'lr') {

@@ -13,26 +13,34 @@
     <title>Surf LaMMA</title>
 </head>
 
-<body id="lamma-surf">
-    <div class="container-fluid">
+<body>
+    <div class="container-fluid" id="lamma-surf">
         <div class="row">
             <div class="col-xl-6">
-                <img v-bind:src="base + model + wave + area + '.' + current + '.png'" />
+                <img v-bind:src="base + model + wave + area + '.' + current + '.png'" alt="Image not available"/>
             </div>
             <div class="col-xl-6">
-                <img v-bind:src="base + model + wind + area + '.' + current + '.png'" />
+                <img v-bind:src="base + model + wind + area + '.' + current + '.png'" alt="Image not available"/>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-2 offset-md-5">
+        <div class="row justify-content-md-center">
+            <div>
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">
-                        <li class="page-item"><a class="page-link" href="#" v-on:click="prev()">Previous</a></li>
-                        <li class="page-item"><a class="page-link" href="#" v-on:click="next()">Next</a></li>
-                        <button type="button" class="btn btn-primary" v-on:click="swap_model()">LR/HR</button>
+                        <li class="page-item"><a class="page-link" href="#" v-on:click="step(-12)">&lt;&lt;</a></li>
+                        <li class="page-item"><a class="page-link" href="#" v-on:click="step(-6)">&lt;</a></li>
+                        <li class="page-item"><a class="page-link" href="#" v-on:click="step(-1)">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#" v-on:click="current=1">Reset</a></li>
+                        <li class="page-item"><a class="page-link" href="#" v-on:click="step(1)">Next</a></li>
+                        <li class="page-item"><a class="page-link" href="#" v-on:click="step(6)">&gt;</a></li>
+                        <li class="page-item"><a class="page-link" href="#" v-on:click="step(12)">&gt;&gt;</a></li>
+                        
                     </ul>
                 </nav>
             </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <button type="button" class="btn btn-primary" v-on:click="swap_model()">Switch LR/HR</button>
         </div>
     </div>
 
@@ -43,7 +51,6 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="./magnifier.js"></script>
     <script src="./app.js"></script>
 </body>
 
