@@ -1,4 +1,12 @@
+const router = new VueRouter({
+    routes: [
+        // dynamic segments start with a colon
+        {path: '/:tick'}
+    ]
+})
+
 var app = new Vue({
+    router,
     el: '#lamma-surf',
     data: {
         base: "http://www.lamma.rete.toscana.it/models/ww3",
@@ -10,7 +18,7 @@ var app = new Vue({
     },
     methods: {
         step: function (n) {
-            this.current = this.current + n;
+            this.$router.push(String(this.current + n));
         },
         swap_model: function () {
             if (this.model == 'lr') {
@@ -23,6 +31,16 @@ var app = new Vue({
         }
     },
     mounted() {
-        
+        if (typeof router.currentRoute.params.tick === "undefined") {
+            this.current = 1;
+        } else {
+            this.current = Number(router.currentRoute.params.tick) + 1;
+        }
+
+    },
+    watch: {
+        $route(to, from) {
+            this.current = Number(to.params.tick);
+        }
     }
 })
