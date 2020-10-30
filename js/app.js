@@ -12,13 +12,12 @@ var app = new Vue({
         base: "http://www.lamma.rete.toscana.it/models/ww3",
         wave: "/last/swh.",
         wind: "/last/wind10.",
-        current: 1,
         model: 'lr',
         area: 'M'
     },
     methods: {
         step: function (n) {
-            this.$router.push(String(this.current + n));
+            this.$router.push(String(Number(this.$route.params.tick) + n));
         },
         swap_model: function () {
             if (this.model == 'lr') {
@@ -31,16 +30,16 @@ var app = new Vue({
         }
     },
     mounted() {
-        if (typeof router.currentRoute.params.tick === "undefined") {
+        if (typeof this.$route.params.tick === "undefined") {
             this.$router.push('1');
         } else {
-            this.current = Number(router.currentRoute.params.tick) + 1;
+            // this.current = Number(router.currentRoute.params.tick) + 1;
         }
 
     },
     watch: {
         $route(to, from) {
-            this.current = Number(to.params.tick);
+            // this.current = Number(to.params.tick);
         }
     }
 })
