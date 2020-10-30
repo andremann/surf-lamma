@@ -30,9 +30,9 @@
             <div>
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">
-                        <li class="page-item"><a class="page-link" v-on:click="step(-12)">&lt;&lt;</a></li>
-                        <li class="page-item"><a class="page-link" v-on:click="step(-6)">&lt;</a></li>
-                        <li class="page-item"><a class="page-link" v-on:click="step(-1)">Previous</a></li>
+                        <li class="page-item" v-bind:class="{disabled: current <= 12}"><a class="page-link" v-on:click="step(-12)">&lt;&lt;</a></li>
+                        <li class="page-item" v-bind:class="{disabled: current <= 6}"><a class="page-link" v-on:click="step(-6)">&lt;</a></li>
+                        <li class="page-item" v-bind:class="{disabled: current <= 1}"><a class="page-link" v-on:click="step(-1)">Previous</a></li>
                         <li class="page-item"><a class="page-link" v-on:click="$router.push('1')">Reset</a></li>
                         <li class="page-item"><a class="page-link" v-on:click="step(1)">Next</a></li>
                         <li class="page-item"><a class="page-link" v-on:click="step(6)">&gt;</a></li>
