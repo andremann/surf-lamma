@@ -32,7 +32,7 @@ var app = new Vue({
     },
     mounted() {
         if (typeof router.currentRoute.params.tick === "undefined") {
-            this.current = 1;
+            this.$router.push('1');
         } else {
             this.current = Number(router.currentRoute.params.tick) + 1;
         }
