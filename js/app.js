@@ -12,7 +12,7 @@ var app = new Vue({
         base: 'http://www.lamma.rete.toscana.it/models/ww3',
         wave: '/last/swh.',
         wind: '/last/wind10.',
-        area:  'M'
+        area:  null
     },
     methods: {
         get_area: function(model) {
