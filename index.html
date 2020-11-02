@@ -30,13 +30,13 @@
             <div>
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">
-                        <li class="page-item" v-bind:class="{disabled: $route.params.tick <= 12}"><a class="page-link" v-on:click="step(-12)">&lt;&lt;</a></li>
-                        <li class="page-item" v-bind:class="{disabled: $route.params.tick <= 6}"><a class="page-link" v-on:click="step(-6)">&lt;</a></li>
-                        <li class="page-item" v-bind:class="{disabled: $route.params.tick <= 1}"><a class="page-link" v-on:click="step(-1)">Previous</a></li>
-                        <li class="page-item"><a class="page-link" v-on:click="$router.push('1')">Reset</a></li>
-                        <li class="page-item"><a class="page-link" v-on:click="step(1)">Next</a></li>
-                        <li class="page-item"><a class="page-link" v-on:click="step(6)">&gt;</a></li>
-                        <li class="page-item"><a class="page-link" v-on:click="step(12)">&gt;&gt;</a></li>
+                        <li class="page-item" v-bind:class="{disabled: $route.params.tick <= 12}"><button type="button" class="page-link" v-on:click="step(-12)">&lt;&lt;</button></li>
+                        <li class="page-item" v-bind:class="{disabled: $route.params.tick <= 6}"><button type="button" class="page-link" v-on:click="step(-6)">&lt;</button></li>
+                        <li class="page-item" v-bind:class="{disabled: $route.params.tick <= 1}"><button type="button" class="page-link" v-on:click="step(-1)">Previous</button></li>
+                        <li class="page-item"><button type="button" class="page-link" v-on:click="$router.push('1')">Reset</button></li>
+                        <li class="page-item"><button type="button" class="page-link" v-on:click="step(1)">Next</button></li>
+                        <li class="page-item"><button type="button" class="page-link" v-on:click="step(6)">&gt;</button></li>
+                        <li class="page-item"><button type="button" class="page-link" v-on:click="step(12)">&gt;&gt;</button></li>
                     </ul>
                 </nav>
             </div>
