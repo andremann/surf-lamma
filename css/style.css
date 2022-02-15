@@ -2,3 +2,7 @@
     /* width: 700px; */
   }
   
+  .rewind {
+    unicode-bidi:bidi-override;
+    direction:rtl;
+  }
