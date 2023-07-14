@@ -9,9 +9,8 @@ var app = new Vue({
     router,
     el: '#lamma-surf',
     data: {
-        base: 'http://www.lamma.rete.toscana.it/models/ww3',
-        wave: '/last/swh.',
-        wind: '/last/wind10.',
+        period: false,
+        gust: false,
         area:  null,
         zoom: false
     },
@@ -42,7 +41,13 @@ var app = new Vue({
         toggle_area: function () {
             this.zoom = !this.zoom;
             this.area = this.get_area(this.$route.params.model);
-        }
+        },
+        toggle_period: function () {
+            this.period = !this.period;
+        },
+        toggle_gust: function () {
+            this.gust = !this.gust;
+        },
     },
     mounted() {
         model = (typeof this.$route.params.model === 'undefined') ? 'lr' : this.$route.params.model;

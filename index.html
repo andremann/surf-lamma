@@ -18,13 +18,21 @@
     <div class="container-fluid" id="lamma-surf">
         <div class="row">
             <div class="col-md-6">
-                <img class="img-fluid mx-auto d-block"
-                    v-bind:src="base + $route.params.model + wave + area + '.' + $route.params.tick + '.png'"
+                <img v-if="!period" class="img-fluid mx-auto d-block"
+                    v-bind:src="'http://www.lamma.rete.toscana.it/models/ww3' + $route.params.model + '/last/swh.' + area + '.' + $route.params.tick + '.png'"
+                    alt="Image not available" />
+
+                <img v-if="period" class="img-fluid mx-auto d-block"
+                    v-bind:src="'http://www.lamma.rete.toscana.it/models/ww3' + $route.params.model + '/last/mwp.' + area + '.' + $route.params.tick + '.png'"
                     alt="Image not available" />
             </div>
             <div class="col-md-6">
-                <img class="img-fluid mx-auto d-block"
-                    v-bind:src="base + $route.params.model + wind + area + '.' + $route.params.tick + '.png'"
+                <img v-if="!gust" class="img-fluid mx-auto d-block"
+                    v-bind:src="'http://www.lamma.rete.toscana.it/models/ww3' + $route.params.model + '/last/wind10.' + area + '.' + $route.params.tick + '.png'"
+                    alt="Image not available" />
+
+                <img v-if="gust" class="img-fluid mx-auto d-block"
+                    v-bind:src="'http://www.lamma.rete.toscana.it/models/ww3' + $route.params.model + '/last/windgust.' + area + '.' + $route.params.tick + '.png'"
                     alt="Image not available" />
             </div>
         </div>
@@ -57,6 +65,17 @@
                         v-on:click="swap_model()">HR model</button>
                     <button v-if="$route.params.model === 'hr'" type="button" class="btn btn-primary"
                         v-on:click="swap_model()">HR model</button>
+
+                    <button v-if="!period" type="button" class="btn btn-secondary"
+                        v-on:click="toggle_period()">Period</button>
+                    <button v-if="period" type="button" class="btn btn-primary"
+                        v-on:click="toggle_period()">Period</button>
+
+                    <button v-if="!gust" type="button" class="btn btn-secondary"
+                        v-on:click="toggle_gust()">Period</button>
+                    <button v-if="gust" type="button" class="btn btn-primary"
+                        v-on:click="toggle_gust()">Period</button>
+
                     <button v-if="!zoom" type="button" class="btn btn-secondary"
                         v-on:click="toggle_area()">Zoom in</button>
                     <button v-if="zoom" type="button" class="btn btn-primary"
