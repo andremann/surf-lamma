@@ -53,14 +53,14 @@
         <div class="row">
             <div class="col">
                 <div class="text-center">
-                    <button v-if="$route.params.model === 'lr'" type="button" class="btn btn-primary"
-                        v-on:click="swap_model()">Switch to HR</button>
+                    <button v-if="$route.params.model === 'lr'" type="button" class="btn btn-secondary"
+                        v-on:click="swap_model()">HR model</button>
                     <button v-if="$route.params.model === 'hr'" type="button" class="btn btn-primary"
-                        v-on:click="swap_model()">Switch to LR</button>
-                    <button v-if="!zoom" type="button" class="btn btn-primary"
+                        v-on:click="swap_model()">HR model</button>
+                    <button v-if="!zoom" type="button" class="btn btn-secondary"
                         v-on:click="toggle_area()">Zoom in</button>
                     <button v-if="zoom" type="button" class="btn btn-primary"
-                        v-on:click="toggle_area()">Zoom out</button>
+                        v-on:click="toggle_area()">Zoom in</button>
                 </div>
             </div>
         </div>
