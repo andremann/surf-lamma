@@ -17,9 +17,9 @@ var app = new Vue({
     methods: {
         get_area: function(model) {
             if (model === 'lr') {
-                return 'M';
+                return 'A';
             } else {
-                return 'B';
+                return 'A';
             }
         },
         step: function (n) {
@@ -28,10 +28,10 @@ var app = new Vue({
         swap_model: function () {
             if (this.$route.params.model == 'lr') {
                 this.$router.push('/model/hr/tick/' + this.$route.params.tick);
-                this.area = 'B';
+                this.area = 'A';
             } else if (this.$route.params.model == 'hr') {
                 this.$router.push('/model/lr/tick/' + this.$route.params.tick);
-                this.area = 'M';
+                this.area = 'A';
             }
         }
     },
