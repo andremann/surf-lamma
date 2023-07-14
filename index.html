@@ -54,11 +54,13 @@
             <div class="col">
                 <div class="text-center">
                     <button v-if="$route.params.model === 'lr'" type="button" class="btn btn-primary"
-                v-on:click="swap_model()">Switch to
-                HR</button>
-                <button v-if="$route.params.model === 'hr'" type="button" class="btn btn-primary"
-                v-on:click="swap_model()">Switch to
-                LR</button>
+                        v-on:click="swap_model()">Switch to HR</button>
+                    <button v-if="$route.params.model === 'hr'" type="button" class="btn btn-primary"
+                        v-on:click="swap_model()">Switch to LR</button>
+                    <button v-if="!zoom" type="button" class="btn btn-primary"
+                        v-on:click="toggle_area()">Zoom in</button>
+                    <button v-if="zoom" type="button" class="btn btn-primary"
+                        v-on:click="toggle_area()">Zoom out</button>
                 </div>
             </div>
         </div>
@@ -76,16 +78,16 @@
     </div>
     <script id="wg_fwdg_48999_100_1670408121149">
         (function (window, document) {
-          var loader = function () {
-            var arg = ["s=48999" ,"m=100","mw=84","uid=wg_fwdg_48999_100_1670408121149" ,"wj=knots" ,"tj=c" ,"waj=m" ,"odh=0" ,"doh=24" ,"fhours=240" ,"hrsm=2" ,"vt=forecasts" ,"lng=en" ,"idbs=1" ,"ts=2" ,"p=WINDSPD,GUST,SMER,HTSGW,PERPW,DIRPW,SWELL1,SWPER1,SWDIR1,SWELL2,SWPER2,SWDIR2,TMP,WCHILL,CDC,APCP1s,RATING"];
-            var script = document.createElement("script");
-            var tag = document.getElementsByTagName("script")[0];
-            script.src = "https://www.windguru.cz/js/widget.php?"+(arg.join("&"));
-            tag.parentNode.insertBefore(script, tag);
-          };
-          window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+            var loader = function () {
+                var arg = ["s=48999", "m=100", "mw=84", "uid=wg_fwdg_48999_100_1670408121149", "wj=knots", "tj=c", "waj=m", "odh=0", "doh=24", "fhours=240", "hrsm=2", "vt=forecasts", "lng=en", "idbs=1", "ts=2", "p=WINDSPD,GUST,SMER,HTSGW,PERPW,DIRPW,SWELL1,SWPER1,SWDIR1,SWELL2,SWPER2,SWDIR2,TMP,WCHILL,CDC,APCP1s,RATING"];
+                var script = document.createElement("script");
+                var tag = document.getElementsByTagName("script")[0];
+                script.src = "https://www.windguru.cz/js/widget.php?" + (arg.join("&"));
+                tag.parentNode.insertBefore(script, tag);
+            };
+            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
         })(window, document);
-        </script>
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

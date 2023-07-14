@@ -12,14 +12,19 @@ var app = new Vue({
         base: 'http://www.lamma.rete.toscana.it/models/ww3',
         wave: '/last/swh.',
         wind: '/last/wind10.',
-        area:  null
+        area:  null,
+        zoom: false
     },
     methods: {
         get_area: function(model) {
-            if (model === 'lr') {
-                return 'A'; // zoomed would be M
+            if (!this.zoom) {
+                return 'A'
             } else {
-                return 'A'; // zoomed woul be B
+                if (model === 'lr') {
+                    return 'M';
+                } else {
+                    return 'B';
+                }
             }
         },
         step: function (n) {
@@ -28,28 +33,21 @@ var app = new Vue({
         swap_model: function () {
             if (this.$route.params.model == 'lr') {
                 this.$router.push('/model/hr/tick/' + this.$route.params.tick);
-                this.area = 'A';
+                this.area = this.get_area(this.$route.params.model);
             } else if (this.$route.params.model == 'hr') {
                 this.$router.push('/model/lr/tick/' + this.$route.params.tick);
-                this.area = 'A';
+                this.area = this.get_area(this.$route.params.model);
             }
+        },
+        toggle_area: function () {
+            this.zoom = !this.zoom;
+            this.area = this.get_area(this.$route.params.model);
         }
     },
     mounted() {
-        if (typeof this.$route.params.tick === "undefined" && typeof this.$route.params.model === "undefined") {
-            this.$router.push('/model/lr/tick/1');
-        }
-        if (typeof this.$route.params.tick === "undefined") {
-            this.$router.push('/model/' + this.$route.params.model + '/tick/1');
-        }
-        if (typeof this.$route.params.model === "undefined") {
-            this.$router.push('/model/lr/tick/' + this.$route.params.model);
-        }
+        model = (typeof this.$route.params.model === 'undefined') ? 'lr' : this.$route.params.model;
+        tick = (typeof this.$route.params.tick === 'undefined') ? '1' : this.$route.params.tick;
+        this.$router.push('/model/' + model + '/tick/' + tick);
         this.area = this.get_area(this.$route.params.model);
-    },
-    watch: {
-        $route(to, from) {
-            this.area = this.get_area(to.params.model);
-        }
     }
 })
