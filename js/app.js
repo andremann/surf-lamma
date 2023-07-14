@@ -17,9 +17,9 @@ var app = new Vue({
     methods: {
         get_area: function(model) {
             if (model === 'lr') {
-                return 'A';
+                return 'A'; // zoomed would be M
             } else {
-                return 'A';
+                return 'A'; // zoomed woul be B
             }
         },
         step: function (n) {
