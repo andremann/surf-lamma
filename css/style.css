@@ -6,3 +6,7 @@
     unicode-bidi:bidi-override;
     direction:rtl;
   }
+
+  .accordion-body {
+    padding: 0;
+  }
