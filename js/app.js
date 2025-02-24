@@ -19,25 +19,21 @@ var app = new Vue({
             if (!this.zoom) {
                 return 'A'
             } else {
-                if (model === '05ecm') {
-                    return 'M';
-                } else {
-                    return 'B';
-                }
+                return 'M';
             }
         },
         step: function (n) {
             this.$router.push(String(Number(this.$route.params.tick) + n));
         },
-        swap_model: function () {
-            if (this.$route.params.model == '05ecm') {
-                this.$router.push('/model/hr/tick/' + this.$route.params.tick);
-                this.area = this.get_area(this.$route.params.model);
-            } else if (this.$route.params.model == 'hr') {
-                this.$router.push('/model/05ecm/tick/' + this.$route.params.tick);
-                this.area = this.get_area(this.$route.params.model);
-            }
-        },
+        // swap_model: function () {
+        //     if (this.$route.params.model == '05ecm') {
+        //         this.$router.push('/model/hr/tick/' + this.$route.params.tick);
+        //         this.area = this.get_area(this.$route.params.model);
+        //     } else if (this.$route.params.model == 'hr') {
+        //         this.$router.push('/model/05ecm/tick/' + this.$route.params.tick);
+        //         this.area = this.get_area(this.$route.params.model);
+        //     }
+        // },
         toggle_area: function () {
             this.zoom = !this.zoom;
             this.area = this.get_area(this.$route.params.model);
@@ -50,7 +46,7 @@ var app = new Vue({
         },
     },
     mounted() {
-        model = (typeof this.$route.params.model === 'undefined' || this.$route.params.model == 'lr') ? '05ecm' : this.$route.params.model;
+        model = (typeof this.$route.params.model === 'undefined' || this.$route.params.model == 'lr' || this.$route.params.model == 'hr') ? '05ecm' : this.$route.params.model;
         tick = (typeof this.$route.params.tick === 'undefined') ? '1' : this.$route.params.tick;
         this.$router.push('/model/' + model + '/tick/' + tick);
         this.area = this.get_area(this.$route.params.model);
