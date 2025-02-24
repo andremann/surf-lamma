@@ -16,24 +16,28 @@ var app = new Vue({
     },
     methods: {
         get_area: function(model) {
-            if (!this.zoom) {
-                return 'A'
+            if (this.$route.params.model == 'mol01ecm') {
+                return 'z2';
             } else {
-                return 'M';
+                if (!this.zoom) {
+                    return 'A'
+                } else {
+                    return 'M';
+                }
             }
         },
         step: function (n) {
             this.$router.push(String(Number(this.$route.params.tick) + n));
         },
-        // swap_model: function () {
-        //     if (this.$route.params.model == '05ecm') {
-        //         this.$router.push('/model/hr/tick/' + this.$route.params.tick);
-        //         this.area = this.get_area(this.$route.params.model);
-        //     } else if (this.$route.params.model == 'hr') {
-        //         this.$router.push('/model/05ecm/tick/' + this.$route.params.tick);
-        //         this.area = this.get_area(this.$route.params.model);
-        //     }
-        // },
+        swap_model: function () {
+            if (this.$route.params.model == 'ww305ecm') {
+                this.$router.push('/model/mol01ecm/tick/' + this.$route.params.tick);
+                this.area = this.get_area(this.$route.params.model);
+            } else if (this.$route.params.model == 'mol01ecm') {
+                this.$router.push('/model/ww305ecm/tick/' + this.$route.params.tick);
+                this.area = this.get_area(this.$route.params.model);
+            }
+        },
         toggle_area: function () {
             this.zoom = !this.zoom;
             this.area = this.get_area(this.$route.params.model);

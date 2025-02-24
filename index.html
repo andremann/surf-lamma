@@ -136,7 +136,7 @@
     </nav>
     <div class="container-fluid" id="lamma-surf">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6" v-if="$route.params.model === 'ww305ecm'">
                 <img v-if="!period" class="img-fluid mx-auto d-block"
                     v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/swh.' + area + '.' + $route.params.tick + '.png'"
                     alt="Image not available" />
@@ -145,13 +145,23 @@
                     v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/mwp.' + area + '.' + $route.params.tick + '.png'"
                     alt="Image not available" />
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" v-if="$route.params.model === 'ww305ecm'">
                 <img v-if="!gust" class="img-fluid mx-auto d-block"
                     v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/wind10.' + area + '.' + $route.params.tick + '.png'"
                     alt="Image not available" />
 
                 <img v-if="gust" class="img-fluid mx-auto d-block"
                     v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/windgust.' + area + '.' + $route.params.tick + '.png'"
+                    alt="Image not available" />
+            </div>
+            <div class="col-md-6" v-if="$route.params.model === 'mol01ecm'">
+                <img class="img-fluid mx-auto d-block"
+                    v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/wind10.' + area + '.' + $route.params.tick + '.png'"
+                    alt="Image not available" />
+            </div>
+            <div class="col-md-6" v-if="$route.params.model === 'mol01ecm'">
+                <img class="img-fluid mx-auto d-block"
+                    v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/gust.' + area + '.' + $route.params.tick + '.png'"
                     alt="Image not available" />
             </div>
         </div>
@@ -180,23 +190,23 @@
         <div class="row">
             <div class="col">
                 <div class="text-center">
-                    <!-- <button v-if="$route.params.model === '05ecm'" type="button" class="btn btn-secondary"
-                        v-on:click="swap_model()">HR model</button> -->
-                    <!-- <button v-if="$route.params.model === 'hr'" type="button" class="btn btn-primary"
-                        v-on:click="swap_model()">HR model</button> -->
+                    <button v-if="$route.params.model === 'ww305ecm'" type="button" class="btn btn-secondary"
+                        v-on:click="swap_model()">Wind HR</button>
+                    <button v-if="$route.params.model === 'mol01ecm'" type="button" class="btn btn-primary"
+                        v-on:click="swap_model()">Wind HR</button>
 
-                    <button v-if="!period" type="button" class="btn btn-secondary"
+                    <button v-if="!period && $route.params.model === 'ww305ecm'" type="button" class="btn btn-secondary"
                         v-on:click="toggle_period()">Period</button>
-                    <button v-if="period" type="button" class="btn btn-primary"
+                    <button v-if="period && $route.params.model === 'ww305ecm'" type="button" class="btn btn-primary"
                         v-on:click="toggle_period()">Period</button>
 
-                    <button v-if="!gust" type="button" class="btn btn-secondary"
+                    <button v-if="!gust && $route.params.model === 'ww305ecm'" type="button" class="btn btn-secondary"
                         v-on:click="toggle_gust()">Gust</button>
-                    <button v-if="gust" type="button" class="btn btn-primary" v-on:click="toggle_gust()">Gust</button>
+                    <button v-if="gust && $route.params.model === 'ww305ecm'" type="button" class="btn btn-primary" v-on:click="toggle_gust()">Gust</button>
 
-                    <button v-if="!zoom" type="button" class="btn btn-secondary" v-on:click="toggle_area()">Zoom
+                    <button v-if="!zoom && $route.params.model === 'ww305ecm'" type="button" class="btn btn-secondary" v-on:click="toggle_area()">Zoom
                         in</button>
-                    <button v-if="zoom" type="button" class="btn btn-primary" v-on:click="toggle_area()">Zoom
+                    <button v-if="zoom && $route.params.model === 'ww305ecm'" type="button" class="btn btn-primary" v-on:click="toggle_area()">Zoom
                         in</button>
                 </div>
             </div>
