@@ -46,7 +46,7 @@ var app = new Vue({
         },
     },
     mounted() {
-        model = (typeof this.$route.params.model === 'undefined' || this.$route.params.model == 'lr' || this.$route.params.model == 'hr') ? '05ecm' : this.$route.params.model;
+        model = (typeof this.$route.params.model === 'undefined' || this.$route.params.model == 'lr' || this.$route.params.model == 'hr') ? 'ww305ecm' : this.$route.params.model;
         tick = (typeof this.$route.params.tick === 'undefined') ? '1' : this.$route.params.tick;
         this.$router.push('/model/' + model + '/tick/' + tick);
         this.area = this.get_area(this.$route.params.model);

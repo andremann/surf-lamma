@@ -138,20 +138,20 @@
         <div class="row">
             <div class="col-md-6">
                 <img v-if="!period" class="img-fluid mx-auto d-block"
-                    v-bind:src="'http://www.lamma.rete.toscana.it/models/ww3' + $route.params.model + '/last/swh.' + area + '.' + $route.params.tick + '.png'"
+                    v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/swh.' + area + '.' + $route.params.tick + '.png'"
                     alt="Image not available" />
 
                 <img v-if="period" class="img-fluid mx-auto d-block"
-                    v-bind:src="'http://www.lamma.rete.toscana.it/models/ww3' + $route.params.model + '/last/mwp.' + area + '.' + $route.params.tick + '.png'"
+                    v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/mwp.' + area + '.' + $route.params.tick + '.png'"
                     alt="Image not available" />
             </div>
             <div class="col-md-6">
                 <img v-if="!gust" class="img-fluid mx-auto d-block"
-                    v-bind:src="'http://www.lamma.rete.toscana.it/models/ww3' + $route.params.model + '/last/wind10.' + area + '.' + $route.params.tick + '.png'"
+                    v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/wind10.' + area + '.' + $route.params.tick + '.png'"
                     alt="Image not available" />
 
                 <img v-if="gust" class="img-fluid mx-auto d-block"
-                    v-bind:src="'http://www.lamma.rete.toscana.it/models/ww3' + $route.params.model + '/last/windgust.' + area + '.' + $route.params.tick + '.png'"
+                    v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/windgust.' + area + '.' + $route.params.tick + '.png'"
                     alt="Image not available" />
             </div>
         </div>
