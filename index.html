@@ -37,8 +37,10 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item"
                                     href="https://www.citysurf.it/it/meteo/centralina-meteo-calambrone/"
-                                    target="_blank">Calambrone <i class="bi bi-graph-up"></i> <i class="bi bi-webcam"></i></a></li>
-                            <li><a class="dropdown-item" href="https://www.livornometeo.it" target="_blank">Livorno <i class="bi bi-graph-up"></i> <i class="bi bi-webcam"></i></a></li>
+                                    target="_blank">Calambrone <i class="bi bi-graph-up"></i> <i
+                                        class="bi bi-webcam"></i></a></li>
+                            <li><a class="dropdown-item" href="https://www.livornometeo.it" target="_blank">Livorno <i
+                                        class="bi bi-graph-up"></i> <i class="bi bi-webcam"></i></a></li>
                             <li><a class="dropdown-item" href="https://app.weathercloud.net/d3336517576#wind"
                                     target="_blank">Tre ponti <i class="bi bi-graph-up"></i></a></li>
                             <li><a class="dropdown-item" href="https://www.ilmolettodiantignano.it/webcam"
@@ -48,7 +50,8 @@
                                     target="_blank">CV Antignano <i class="bi bi-webcam"></i></a></li>
                             <li><a class="dropdown-item"
                                     href="https://stazioni4.soluzionimeteo.it/livorno/indexDesktop.php"
-                                    target="_blank">Calignaia <i class="bi bi-graph-up"></i> <i class="bi bi-webcam"></i></a></li>
+                                    target="_blank">Calignaia <i class="bi bi-graph-up"></i> <i
+                                        class="bi bi-webcam"></i></a></li>
                             <li><a class="dropdown-item"
                                     href="https://www.skylinewebcams.com/en/webcam/italia/toscana/livorno/castiglioncello-livorno.html"
                                     target="_blank">Quercetano <i class="bi bi-webcam"></i></a></li>
@@ -57,7 +60,8 @@
                                     target="_blank">Lillatro <i class="bi bi-webcam"></i></a></li>
                             <li><a class="dropdown-item" href="http://www.circolonauticolillatro.it/V2016a/web-cam/"
                                     target="_blank">Lillatro 2 <i class="bi bi-webcam"></i></a></li>
-                            <li><a class="dropdown-item" href="https://www.rosignanometeo.it" target="_blank">Rosignano <i class="bi bi-graph-up"></i> <i class="bi bi-webcam"></i></a></li>
+                            <li><a class="dropdown-item" href="https://www.rosignanometeo.it" target="_blank">Rosignano
+                                    <i class="bi bi-graph-up"></i> <i class="bi bi-webcam"></i></a></li>
                             <li><a class="dropdown-item" href="https://www.hoteliginepri.it/webcam/"
                                     target="_blank">Donoratico <i class="bi bi-webcam"></i></a></li>
                             <li><a class="dropdown-item"
@@ -309,6 +313,20 @@
                             </div>
                         </div>
                     </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSeven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                Talamone
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div id="wg_fwdg_49015_100_1740383762628"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -389,6 +407,18 @@
         (function (window, document) {
             var loader = function () {
                 var arg = ["s=48999", "m=52", "mw=84", "uid=wg_fwdg_48999_52_1740142617593", "wj=knots", "tj=c", "waj=m", "tij=cm", "odh=0", "doh=24", "fhours=240", "hrsm=2", "vt=forecasts", "lng=en", "p=WINDSPD,GUST,MWINDSPD,SMER,HTSGW,PERPW,DIRPW,SWELL1,SWPER1,SWDIR1,SWELL2,SWPER2,SWDIR2,TMP,WCHILL,CDC,TCDC,APCP1s,RATING"];
+                var script = document.createElement("script");
+                var tag = document.getElementsByTagName("script")[0];
+                script.src = "https://www.windguru.cz/js/widget.php?" + (arg.join("&"));
+                tag.parentNode.insertBefore(script, tag);
+            };
+            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+        })(window, document);
+    </script>
+    <script>
+        (function (window, document) {
+            var loader = function () {
+                var arg = ["s=49015", "m=100", "mw=84", "uid=wg_fwdg_49015_100_1740383762628", "wj=knots", "tj=c", "waj=m", "odh=0", "doh=24", "fhours=240", "hrsm=2", "vt=forecasts", "lng=en", "idbs=1", "ts=2", "p=WINDSPD,GUST,SMER,HTSGW,PERPW,DIRPW,SWELL1,SWPER1,SWDIR1,SWELL2,SWPER2,SWDIR2,TMP,WCHILL,CDC,APCP1s,RATING"];
                 var script = document.createElement("script");
                 var tag = document.getElementsByTagName("script")[0];
                 script.src = "https://www.windguru.cz/js/widget.php?" + (arg.join("&"));
