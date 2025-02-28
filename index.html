@@ -154,13 +154,12 @@
                     v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/windgust.' + area + '.' + $route.params.tick + '.png'"
                     alt="Image not available" />
             </div>
-            <div class="col-md-6" v-if="$route.params.model === 'mol01ecm'">
-                <img class="img-fluid mx-auto d-block"
+            <div class="col-md-12" v-if="$route.params.model === 'mol01ecm'">
+                <img v-if="!gust" class="img-fluid mx-auto d-block"
                     v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/wind10.' + area + '.' + $route.params.tick + '.png'"
                     alt="Image not available" />
-            </div>
-            <div class="col-md-6" v-if="$route.params.model === 'mol01ecm'">
-                <img class="img-fluid mx-auto d-block"
+
+                <img v-if="gust" class="img-fluid mx-auto d-block"
                     v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/gust.' + area + '.' + $route.params.tick + '.png'"
                     alt="Image not available" />
             </div>
@@ -200,9 +199,9 @@
                     <button v-if="period && $route.params.model === 'ww305ecm'" type="button" class="btn btn-primary"
                         v-on:click="toggle_period()">Period</button>
 
-                    <button v-if="!gust && $route.params.model === 'ww305ecm'" type="button" class="btn btn-secondary"
+                    <button v-if="!gust" type="button" class="btn btn-secondary"
                         v-on:click="toggle_gust()">Gust</button>
-                    <button v-if="gust && $route.params.model === 'ww305ecm'" type="button" class="btn btn-primary" v-on:click="toggle_gust()">Gust</button>
+                    <button v-if="gust" type="button" class="btn btn-primary" v-on:click="toggle_gust()">Gust</button>
 
                     <button v-if="!zoom && $route.params.model === 'ww305ecm'" type="button" class="btn btn-secondary" v-on:click="toggle_area()">Zoom
                         in</button>
