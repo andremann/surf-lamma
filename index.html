@@ -203,9 +203,9 @@
                         v-on:click="toggle_gust()">Gust</button>
                     <button v-if="gust" type="button" class="btn btn-primary" v-on:click="toggle_gust()">Gust</button>
 
-                    <button v-if="!zoom && $route.params.model === 'ww305ecm'" type="button" class="btn btn-secondary" v-on:click="toggle_area()">Zoom
+                    <button v-if="!zoom && $route.params.model === 'ww305ecm'" type="button" class="btn btn-secondary" v-on:click="toggle_zoom()">Zoom
                         in</button>
-                    <button v-if="zoom && $route.params.model === 'ww305ecm'" type="button" class="btn btn-primary" v-on:click="toggle_area()">Zoom
+                    <button v-if="zoom && $route.params.model === 'ww305ecm'" type="button" class="btn btn-primary" v-on:click="toggle_zoom()">Zoom
                         in</button>
                 </div>
             </div>

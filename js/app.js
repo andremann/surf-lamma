@@ -15,6 +15,29 @@ var app = new Vue({
         zoom: false
     },
     methods: {
+        handleKeyDown(event) {
+            if (event.key === 'ArrowRight') {
+              this.step(1);
+            }
+            if (event.key === 'ArrowLeft') {
+                this.step(-1);
+            }
+            if (event.key === 'r') {
+                this.$router.push('/model/' + this.$route.params.model + '/tick/' + 1);
+            }
+            if (event.key === 'g') {
+                this.toggle_gust();
+            }
+            if (event.key === 'p') {
+                this.toggle_period();
+            }
+            if (event.key === 'z') {
+                this.toggle_zoom();
+            }
+            if (event.key === 'h') {
+                this.swap_model();
+            }
+        },
         get_area: function(model) {
             if (this.$route.params.model == 'mol01ecm') {
                 return 'z2';
@@ -38,7 +61,7 @@ var app = new Vue({
                 this.area = this.get_area(this.$route.params.model);
             }
         },
-        toggle_area: function () {
+        toggle_zoom: function () {
             this.zoom = !this.zoom;
             this.area = this.get_area(this.$route.params.model);
         },
@@ -53,6 +76,10 @@ var app = new Vue({
         model = (typeof this.$route.params.model === 'undefined' || this.$route.params.model == 'lr' || this.$route.params.model == 'hr') ? 'ww305ecm' : this.$route.params.model;
         tick = (typeof this.$route.params.tick === 'undefined') ? '1' : this.$route.params.tick;
         this.$router.push('/model/' + model + '/tick/' + tick);
-        this.area = this.get_area(this.$route.params.model);
+        this.area = this.get_area(model);
+        window.addEventListener('keydown', this.handleKeyDown);
+    },
+    beforeUnmount() {
+        window.removeEventListener('keydown', this.handleKeyDown);
     }
 })
