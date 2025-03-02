@@ -67,6 +67,8 @@
                             <li><a class="dropdown-item"
                                     href="https://www.whatsupcams.com/it/webcams/italia/toscana/san-vincenzo-it/bagno-venere-talani-livecam-san-vincenzo-livorno/"
                                     target="_blank">San Vincenzo <i class="bi bi-webcam"></i></a></li>
+                            <li><a class="dropdown-item" href="https://www.technostorm.it/webcambaratti/"
+                                    target="_blank">Baratti <i class="bi bi-webcam"></i></a></li>
                             <li><a class="dropdown-item" href="https://www.meteosalivoli.altervista.org/"
                                     target="_blank">Salivoli <i class="bi bi-graph-up"></i></a></li>
                             <li><a class="dropdown-item" href="https://oltreleali.org/meteo-salivoli/"
@@ -157,7 +159,7 @@
             <div class="col-md-6 offset-md-3" v-if="$route.params.model === 'mol01ecm'">
                 <img v-if="!gust" class="img-fluid mx-auto d-block"
                     v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/wind10.' + area + '.' + $route.params.tick + '.png'"
-                    alt="Image not available"/>
+                    alt="Image not available" />
 
                 <img v-if="gust" class="img-fluid mx-auto d-block"
                     v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/gust.' + area + '.' + $route.params.tick + '.png'"
@@ -203,9 +205,11 @@
                         v-on:click="toggle_gust()">Gust</button>
                     <button v-if="gust" type="button" class="btn btn-primary" v-on:click="toggle_gust()">Gust</button>
 
-                    <button v-if="!zoom && $route.params.model === 'ww305ecm'" type="button" class="btn btn-secondary" v-on:click="toggle_zoom()">Zoom
+                    <button v-if="!zoom && $route.params.model === 'ww305ecm'" type="button" class="btn btn-secondary"
+                        v-on:click="toggle_zoom()">Zoom
                         in</button>
-                    <button v-if="zoom && $route.params.model === 'ww305ecm'" type="button" class="btn btn-primary" v-on:click="toggle_zoom()">Zoom
+                    <button v-if="zoom && $route.params.model === 'ww305ecm'" type="button" class="btn btn-primary"
+                        v-on:click="toggle_zoom()">Zoom
                         in</button>
                 </div>
             </div>
@@ -255,12 +259,13 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingQuercianella">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseQuercianella" aria-expanded="false" aria-controls="collapseQuercianella">
+                                data-bs-target="#collapseQuercianella" aria-expanded="false"
+                                aria-controls="collapseQuercianella">
                                 Quercianella
                             </button>
                         </h2>
-                        <div id="collapseQuercianella" class="accordion-collapse collapse" aria-labelledby="headingQuercianella"
-                            data-bs-parent="#accordion">
+                        <div id="collapseQuercianella" class="accordion-collapse collapse"
+                            aria-labelledby="headingQuercianella" data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div id="wg_fwdg_49000_100_1694415054160"></div>
                             </div>
@@ -269,12 +274,13 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingDonoratico">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseDonoratico" aria-expanded="false" aria-controls="collapseDonoratico">
+                                data-bs-target="#collapseDonoratico" aria-expanded="false"
+                                aria-controls="collapseDonoratico">
                                 Marina di Donoratico
                             </button>
                         </h2>
-                        <div id="collapseDonoratico" class="accordion-collapse collapse" aria-labelledby="headingDonoratico"
-                            data-bs-parent="#accordion">
+                        <div id="collapseDonoratico" class="accordion-collapse collapse"
+                            aria-labelledby="headingDonoratico" data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div id="wg_fwdg_49005_100_1694415252564"></div>
                             </div>
@@ -295,6 +301,20 @@
                         </div>
                     </div>
                     <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingBaratti">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseBaratti" aria-expanded="false" aria-controls="collapseBaratti">
+                                Baratti
+                            </button>
+                        </h2>
+                        <div id="collapseBaratti" class="accordion-collapse collapse" aria-labelledby="headingBaratti"
+                            data-bs-parent="#accordion">
+                            <div class="accordion-body">
+                                <div id="wg_fwdg_49008_100_1740901537473"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
                         <h2 class="accordion-header" id="headingPerelli">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapsePerelli" aria-expanded="false" aria-controls="collapsePerelli">
@@ -311,12 +331,13 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingCastiglione">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseCastiglione" aria-expanded="false" aria-controls="collapseCastiglione">
+                                data-bs-target="#collapseCastiglione" aria-expanded="false"
+                                aria-controls="collapseCastiglione">
                                 Castiglione della Pescaia
                             </button>
                         </h2>
-                        <div id="collapseCastiglione" class="accordion-collapse collapse" aria-labelledby="headingCastiglione"
-                            data-bs-parent="#accordion">
+                        <div id="collapseCastiglione" class="accordion-collapse collapse"
+                            aria-labelledby="headingCastiglione" data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div id="wg_fwdg_719383_100_1740142339475"></div>
                             </div>
@@ -325,12 +346,13 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTalamoneen">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTalamoneen" aria-expanded="false" aria-controls="collapseTalamoneen">
+                                data-bs-target="#collapseTalamoneen" aria-expanded="false"
+                                aria-controls="collapseTalamoneen">
                                 Talamone
                             </button>
                         </h2>
-                        <div id="collapseTalamoneen" class="accordion-collapse collapse" aria-labelledby="headingTalamoneen"
-                            data-bs-parent="#accordion">
+                        <div id="collapseTalamoneen" class="accordion-collapse collapse"
+                            aria-labelledby="headingTalamoneen" data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div id="wg_fwdg_49015_100_1740383762628"></div>
                             </div>
@@ -415,7 +437,7 @@
     <script>
         (function (window, document) {
             var loader = function () {
-                var arg = ["s=48999", "m=52", "mw=84", "uid=wg_fwdg_48999_52_1740142617593", "wj=knots", "tj=c", "waj=m", "tij=cm", "odh=0", "doh=24", "fhours=240", "hrsm=2", "vt=forecasts", "lng=en", "p=WINDSPD,GUST,MWINDSPD,SMER,HTSGW,PERPW,DIRPW,SWELL1,SWPER1,SWDIR1,SWELL2,SWPER2,SWDIR2,TMP,WCHILL,CDC,TCDC,APCP1s,RATING"];
+                var arg = ["s=48999", "m=52", "mw=84", "uid=wg_fwdg_48999_52_1740142617593", "wj=knots", "tj=c", "waj=m", "odh=0", "doh=24", "fhours=240", "hrsm=2", "vt=forecasts", "lng=en", "p=WINDSPD,GUST,MWINDSPD,SMER,HTSGW,PERPW,DIRPW,SWELL1,SWPER1,SWDIR1,SWELL2,SWPER2,SWDIR2,TMP,WCHILL,CDC,TCDC,APCP1s,RATING"];
                 var script = document.createElement("script");
                 var tag = document.getElementsByTagName("script")[0];
                 script.src = "https://www.windguru.cz/js/widget.php?" + (arg.join("&"));
@@ -428,6 +450,18 @@
         (function (window, document) {
             var loader = function () {
                 var arg = ["s=49015", "m=100", "mw=84", "uid=wg_fwdg_49015_100_1740383762628", "wj=knots", "tj=c", "waj=m", "odh=0", "doh=24", "fhours=240", "hrsm=2", "vt=forecasts", "lng=en", "idbs=1", "ts=2", "p=WINDSPD,GUST,SMER,HTSGW,PERPW,DIRPW,SWELL1,SWPER1,SWDIR1,SWELL2,SWPER2,SWDIR2,TMP,WCHILL,CDC,APCP1s,RATING"];
+                var script = document.createElement("script");
+                var tag = document.getElementsByTagName("script")[0];
+                script.src = "https://www.windguru.cz/js/widget.php?" + (arg.join("&"));
+                tag.parentNode.insertBefore(script, tag);
+            };
+            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+        })(window, document);
+    </script>
+    <script>
+        (function (window, document) {
+            var loader = function () {
+                var arg = ["s=49008", "m=100", "mw=84", "uid=wg_fwdg_49008_100_1740901537473", "wj=knots", "tj=c", "waj=m", "odh=0", "doh=24", "fhours=240", "hrsm=2", "vt=forecasts", "lng=en", "idbs=1", "ts=2", "p=WINDSPD,GUST,SMER,HTSGW,PERPW,DIRPW,SWELL1,SWPER1,SWDIR1,SWELL2,SWPER2,SWDIR2,TMP,WCHILL,CDC,APCP1s,RATING"];
                 var script = document.createElement("script");
                 var tag = document.getElementsByTagName("script")[0];
                 script.src = "https://www.windguru.cz/js/widget.php?" + (arg.join("&"));
