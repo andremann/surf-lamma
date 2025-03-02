@@ -154,10 +154,10 @@
                     v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/windgust.' + area + '.' + $route.params.tick + '.png'"
                     alt="Image not available" />
             </div>
-            <div class="col-md-12" v-if="$route.params.model === 'mol01ecm'">
+            <div class="col-md-6 offset-md-3" v-if="$route.params.model === 'mol01ecm'">
                 <img v-if="!gust" class="img-fluid mx-auto d-block"
                     v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/wind10.' + area + '.' + $route.params.tick + '.png'"
-                    alt="Image not available" />
+                    alt="Image not available"/>
 
                 <img v-if="gust" class="img-fluid mx-auto d-block"
                     v-bind:src="'http://www.lamma.rete.toscana.it/models/' + $route.params.model + '/last/gust.' + area + '.' + $route.params.tick + '.png'"
@@ -166,7 +166,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <nav aria-label="Page navigation example">
+                <nav aria-label="Page navigation">
                     <ul class="pagination justify-content-center">
                         <li class="page-item" v-bind:class="{disabled: $route.params.tick <= 12}"><button type="button"
                                 class="page-link" v-on:click="step(-12)">&lt;&lt;</button></li>
@@ -223,16 +223,16 @@
         </div>
         <div class="row">
             <div class="col">
-                <div class="accordion" id="accordionExample">
+                <div class="accordion" id="accordion">
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
+                        <h2 class="accordion-header" id="heading3P">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                data-bs-target="#collapse3P" aria-expanded="false" aria-controls="collapse3P">
                                 Tre ponti
                             </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                            data-bs-parent="#accordionExample">
+                        <div id="collapse3P" class="accordion-collapse collapse" aria-labelledby="heading3P"
+                            data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div id="wg_fwdg_48999_100_1670408121149"></div>
                             </div>
@@ -246,91 +246,91 @@
                             </button>
                         </h2>
                         <div id="collapseArome" class="accordion-collapse collapse" aria-labelledby="headingArome"
-                            data-bs-parent="#accordionExample">
+                            data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div id="wg_fwdg_48999_52_1740142617593"></div>
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
+                        <h2 class="accordion-header" id="headingQuercianella">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                data-bs-target="#collapseQuercianella" aria-expanded="false" aria-controls="collapseQuercianella">
                                 Quercianella
                             </button>
                         </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                            data-bs-parent="#accordionExample">
+                        <div id="collapseQuercianella" class="accordion-collapse collapse" aria-labelledby="headingQuercianella"
+                            data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div id="wg_fwdg_49000_100_1694415054160"></div>
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
+                        <h2 class="accordion-header" id="headingDonoratico">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                data-bs-target="#collapseDonoratico" aria-expanded="false" aria-controls="collapseDonoratico">
                                 Marina di Donoratico
                             </button>
                         </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                            data-bs-parent="#accordionExample">
+                        <div id="collapseDonoratico" class="accordion-collapse collapse" aria-labelledby="headingDonoratico"
+                            data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div id="wg_fwdg_49005_100_1694415252564"></div>
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFour">
+                        <h2 class="accordion-header" id="headingSanvi">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                data-bs-target="#collapseSanvi" aria-expanded="false" aria-controls="collapseSanvi">
                                 San Vincenzo
                             </button>
                         </h2>
-                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                            data-bs-parent="#accordionExample">
+                        <div id="collapseSanvi" class="accordion-collapse collapse" aria-labelledby="headingSanvi"
+                            data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div id="wg_fwdg_49006_100_1740141738824"></div>
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFive">
+                        <h2 class="accordion-header" id="headingPerelli">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                data-bs-target="#collapsePerelli" aria-expanded="false" aria-controls="collapsePerelli">
                                 Perelli
                             </button>
                         </h2>
-                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                            data-bs-parent="#accordionExample">
+                        <div id="collapsePerelli" class="accordion-collapse collapse" aria-labelledby="headingPerelli"
+                            data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div id="wg_fwdg_49009_100_1740142045133"></div>
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingSix">
+                        <h2 class="accordion-header" id="headingCastiglione">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                data-bs-target="#collapseCastiglione" aria-expanded="false" aria-controls="collapseCastiglione">
                                 Castiglione della Pescaia
                             </button>
                         </h2>
-                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-                            data-bs-parent="#accordionExample">
+                        <div id="collapseCastiglione" class="accordion-collapse collapse" aria-labelledby="headingCastiglione"
+                            data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div id="wg_fwdg_719383_100_1740142339475"></div>
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingSeven">
+                        <h2 class="accordion-header" id="headingTalamoneen">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                data-bs-target="#collapseTalamoneen" aria-expanded="false" aria-controls="collapseTalamoneen">
                                 Talamone
                             </button>
                         </h2>
-                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
-                            data-bs-parent="#accordionExample">
+                        <div id="collapseTalamoneen" class="accordion-collapse collapse" aria-labelledby="headingTalamoneen"
+                            data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div id="wg_fwdg_49015_100_1740383762628"></div>
                             </div>
