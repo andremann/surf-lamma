@@ -247,20 +247,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingArome">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseArome" aria-expanded="false" aria-controls="collapseArome">
-                                Tre ponti (Arome-HD)
-                            </button>
-                        </h2>
-                        <div id="collapseArome" class="accordion-collapse collapse" aria-labelledby="headingArome"
-                            data-bs-parent="#accordion">
-                            <div class="accordion-body">
-                                <div id="wg_fwdg_48999_52_1740142617593"></div>
-                            </div>
-                        </div>
-                    </div> -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingQuercianella">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -273,6 +259,20 @@
                             aria-labelledby="headingQuercianella" data-bs-parent="#accordion">
                             <div class="accordion-body">
                                 <div id="wg_fwdg_49000_100_1694415054160"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingVada">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseVada" aria-expanded="false" aria-controls="collapseVada">
+                                Vada
+                            </button>
+                        </h2>
+                        <div id="collapseVada" class="accordion-collapse collapse" aria-labelledby="headingVada"
+                            data-bs-parent="#accordion">
+                            <div class="accordion-body">
+                                <div id="wg_fwdg_49002_100_1741093526118"></div>
                             </div>
                         </div>
                     </div>
@@ -467,6 +467,18 @@
         (function (window, document) {
             var loader = function () {
                 var arg = ["s=49008", "m=100", "mw=84", "uid=wg_fwdg_49008_100_1740901537473", "wj=knots", "tj=c", "waj=m", "odh=0", "doh=24", "fhours=240", "hrsm=2", "vt=forecasts", "lng=en", "idbs=1", "ts=2", "p=WINDSPD,GUST,SMER,HTSGW,PERPW,DIRPW,SWELL1,SWPER1,SWDIR1,SWELL2,SWPER2,SWDIR2,TMP,WCHILL,CDC,APCP1s,RATING"];
+                var script = document.createElement("script");
+                var tag = document.getElementsByTagName("script")[0];
+                script.src = "https://www.windguru.cz/js/widget.php?" + (arg.join("&"));
+                tag.parentNode.insertBefore(script, tag);
+            };
+            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+        })(window, document);
+    </script>
+    <script>
+        (function (window, document) {
+            var loader = function () {
+                var arg = ["s=49002", "m=100", "mw=84", "uid=wg_fwdg_49002_100_1741093526118", "wj=knots", "tj=c", "waj=m", "odh=0", "doh=24", "fhours=240", "hrsm=2", "vt=forecasts", "lng=en", "idbs=1", "ts=2", "p=WINDSPD,GUST,SMER,HTSGW,PERPW,DIRPW,SWELL1,SWPER1,SWDIR1,SWELL2,SWPER2,SWDIR2,TMP,WCHILL,CDC,APCP1s,RATING"];
                 var script = document.createElement("script");
                 var tag = document.getElementsByTagName("script")[0];
                 script.src = "https://www.windguru.cz/js/widget.php?" + (arg.join("&"));
