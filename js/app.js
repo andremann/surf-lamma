@@ -39,8 +39,8 @@ var app = new Vue({
             }
         },
         get_area: function(model) {
-            if (this.$route.params.model == 'mol01ecm') {
-                return 'z2';
+            if (this.$route.params.model == 'ww3hrecm') {
+                return 'AA';
             } else {
                 if (!this.zoom) {
                     return 'A'
@@ -53,11 +53,11 @@ var app = new Vue({
             this.$router.push(String(Number(this.$route.params.tick) + n));
         },
         swap_model: function () {
-            if (this.$route.params.model == 'ww305ecm') {
-                this.$router.push('/model/mol01ecm/tick/' + this.$route.params.tick);
+            if (this.$route.params.model == 'ww3lrecm') {
+                this.$router.push('/model/ww3hrecm/tick/' + this.$route.params.tick);
                 this.area = this.get_area(this.$route.params.model);
-            } else if (this.$route.params.model == 'mol01ecm') {
-                this.$router.push('/model/ww305ecm/tick/' + this.$route.params.tick);
+            } else if (this.$route.params.model == 'ww3hrecm') {
+                this.$router.push('/model/ww3lrecm/tick/' + this.$route.params.tick);
                 this.area = this.get_area(this.$route.params.model);
             }
         },
@@ -73,7 +73,7 @@ var app = new Vue({
         },
     },
     mounted() {
-        model = (typeof this.$route.params.model === 'undefined' || this.$route.params.model == 'lr' || this.$route.params.model == 'hr') ? 'ww305ecm' : this.$route.params.model;
+        model = (typeof this.$route.params.model === 'undefined' || this.$route.params.model == 'lr' || this.$route.params.model == 'hr') ? 'ww3lrecm' : this.$route.params.model;
         tick = (typeof this.$route.params.tick === 'undefined') ? '1' : this.$route.params.tick;
         this.$router.push('/model/' + model + '/tick/' + tick);
         this.area = this.get_area(model);
